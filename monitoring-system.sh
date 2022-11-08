@@ -4,6 +4,10 @@ do
 clear
 
 echo "MONITORING SYSTEM"
+echo -n -e "    Hostname \t "
+hostname
+echo -n -e "    Ip Address \t "
+hostname -I
 echo -n -e "    Storage \t "
 df -hl | awk '/^\/dev\/sd[abc]/ { sum+=$5 } END { print sum"%" }'
 echo -n -e "    CPU \t "
